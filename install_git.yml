@@ -1,0 +1,9 @@
+- name: Install Git on remote servers
+  hosts: webservers
+  become: true
+  tasks:
+  - name: Ensure Git is installed
+    ansible.builtin.apt:
+      name: git
+      state: present
+      update_cache: true

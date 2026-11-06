@@ -1,0 +1,9 @@
+- name: Remove Git from remote servers
+  hosts: webservers
+  become: true
+  tasks:
+  - name: Ensure Git is removed
+    ansible.builtin.apt:
+      name: git
+      state: absent
+      purge: true
